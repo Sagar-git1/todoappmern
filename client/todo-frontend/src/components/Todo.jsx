@@ -5,12 +5,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 export const Todo = ({ todos, setTodos }) => {
   function deleteTodo(id, todos, setTodos) {
-    axios.delete(`http://localhost:3001/deleteTodo/${id}`).then((response) => {
-      if (response.data.msg) {
-        const updatedTodos = todos.filter((todo) => todo._id !== id);
-        setTodos(updatedTodos);
-      }
-    });
+    axios
+      .delete(`https://todoapp-backend-d1ib.onrender.com/deleteTodo/${id}`)
+      .then((response) => {
+        if (response.data.msg) {
+          const updatedTodos = todos.filter((todo) => todo._id !== id);
+          setTodos(updatedTodos);
+        }
+      });
   }
   return (
     <div style={{ display: "flex" }}>

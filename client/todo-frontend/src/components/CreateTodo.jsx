@@ -17,7 +17,7 @@ export const CreateTodo = ({ trigger, setTrigger }) => {
     console.log("Im in event handler");
     if (title !== "" && description !== "") {
       axios
-        .post("http://localhost:3001/postTodo", {
+        .post("https://todoapp-backend-d1ib.onrender.com/postTodo", {
           title: title.toLowerCase(),
           description: description.toLowerCase(),
         })
